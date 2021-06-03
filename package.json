@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cnwangjie/run-rs-github-action#readme",
   "dependencies": {
     "@actions/core": "^1.3.0",
+    "mongodb": "*",
     "run-rs": "^0.7.4"
   }
 }

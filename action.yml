@@ -11,6 +11,10 @@ inputs:
     required: false
     default: ''
 
+outputs:
+  url:
+    description: 'The MongoDB url schema to connect'
+
 runs:
   using: 'node12'
   main: 'index.js'

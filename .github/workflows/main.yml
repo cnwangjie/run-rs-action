@@ -1,14 +1,24 @@
 name: 'Test'
 
-on: [push]
+on:
+  - push
+  - workflow_dispatch
 
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Test action
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Use current action
+      - name: Run current action
+        id: mongo
         uses: ./
+
+      - name: Attempt to connect to replica set
+        env:
+          MONGO_URL: ${{ steps.mongo.outputs.url }}
+        run: |
+          node ./test.js
