@@ -1,0 +1,14 @@
+name: 'Test'
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use current action
+        uses: ./

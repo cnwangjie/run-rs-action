@@ -1,0 +1,24 @@
+{
+  "name": "run-rs-github-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnwangjie/run-rs-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cnwangjie/run-rs-github-action/issues"
+  },
+  "homepage": "https://github.com/cnwangjie/run-rs-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "run-rs": "^0.7.4"
+  }
+}

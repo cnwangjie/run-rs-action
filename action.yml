@@ -1,0 +1,16 @@
+name: 'Run MongoDB replica sets in GitHub Actions'
+description: 'Start multiple nodes MongoDB replica sets by run-rs.'
+
+branding:
+  icon: 'database'
+  color: 'blue'
+
+inputs:
+  args:
+    description: 'Arguments pass to run-rs'
+    required: false
+    default: ''
+
+runs:
+  using: 'node12'
+  main: 'index.js'
