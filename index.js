@@ -1,13 +1,21 @@
 const core = require('@actions/core')
 const readline = require('readline')
 const {spawn} = require('child_process')
+const path = require('path')
 const ReadableStreamClone = require('./readable-stream-clone')
 
-const args = core.getInput('args');
-const cp = spawn('node_modules/.bin/run-rs', args.split(' '), { detached: true })
+const args = core.getInput('args')
+const cp = spawn(path.join(__dirname, 'node_modules/run-rs/index.js'), args.split(' '), {
+  detached: true,
+  cwd: __dirname,
+  shell: true,
+})
 cp.stderr.pipe(process.stderr)
+cp.on('exit', (code) => {
+  if (code !== 0) process.exit(code)
+})
 cp.on('error', (err) => {
-  core.setFailed(err.message);
+  core.setFailed(err.message)
   process.exit()
 })
 
